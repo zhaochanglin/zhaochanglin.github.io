@@ -1,0 +1,161 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+	<!--声明当前页面的编码：charset=gbk,gb2132(中文编码)-->
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<!--网页三要素-->
+	<title>CSS相册 -- 赵磊</title>
+	<link rel="shortcut icon" href="images/a.jpg">
+	<meta name="Keywords" content="关键词1,关键词2">
+    <meta name="description" content="网页的描述内容">
+	 
+	 <style type="text/css">
+	 *{margin:10;padding:0;} 
+	 body{background:url(images/35404-106.jpg) no-repeat center;}
+	  /*下雪背景
+	 #snow{width:100%;height:768px;margin-top:-100px;position:relative;}
+	 */
+	 .photo{width:1000px;height:600px;margin:20px auto;}
+	 .photo ul li{height:103px;list-style:none;}
+	 .photo ul li a{width:98px;height:98px;display:block;float:left;
+	  margin-left:6px;													   
+	  background:url(images/a1.jpg) no-repeat;border-radius:7px;
+	  /*chrome & safari*/
+     -webkit-transition:-webkit-transform 2s;
+	 /*firefox*/
+	 -moz-transition:-moz-transform 1s;
+	 /*opera*/
+	 -o-transition:-o-transform 1s;
+	 /*IE*/
+	 -ms-transition:transform 2s;
+	 }
+	 .photo ul li a:hover{transform:rotateY(360deg);}
+	 /*
+		rotate(30deg);顺时针旋转30度
+		rotate(-30deg);逆时针旋转30度
+		rotateX(30deg);沿着X轴旋转30度
+		rotateX(-30deg);沿着X轴旋转30度
+		rotateY(30deg);沿着Y轴旋转30度
+		rotateY(-30deg);沿着Y轴旋转30度
+		rotateZ(30deg);沿着Z轴旋转30度
+		rotateZ(-30deg);沿着Z轴旋转30度
+
+		  Z轴
+		    \
+			 \
+			  \
+			   \
+				\_________________ X轴
+				|
+				|
+				|
+				|
+				|
+				|
+				|
+			    Y轴
+	 */
+	
+	 /*第一行*/
+	 .photo ul  .one_right{margin-left:110px}
+	 .photo ul  .one_left{margin-left:241px;}
+	 /*第二行*/
+	 .photo ul .two_one{margin-left:134px;}
+	 /*第三行*/
+	 .photo ul .three_one{margin-left:134px;}
+	 /*第四行*/
+	 .photo ul .four_one{margin-left:240px;}
+	 /*第五行*/
+	 .photo ul .five_one{margin-left:346px;}
+	 /*第六行*/
+	 .photo ul .six_one{margin-left:452px;}
+	 .snow-container{position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 100001;}
+	 </style>
+	<link rel="stylesheet" href="css/animate.css" type="text/css"/>
+    </head>
+   <body>
+    <!--<embed src="flash/white_star_effect.swf" id="snow">-->
+   <div class="photo">
+	<ul>
+		<li><!--第一行-->
+			<a href="javascript:;"  class="one_left"></a>
+			<a href="javascript:;"></a>
+			<a href="javascript:;" style="display:none"></a>
+			<a href="javascript:;" class="one_right"></a>
+			<a href="javascript:;" ></a>
+
+
+		</li>
+		<li><!--第二行-->
+			<a href="javascript:;" class="two_one" style="background:url(images/a1.jpg)"></a>
+			<a href="javascript:;" style="background:url(images/a1.jpg)"></a>
+			<a href="javascript:;" style="background:url(images/a1.jpg)"></a>
+			<a href="javascript:;" style="background:url(images/a1.jpg)"></a>
+			<a href="javascript:;" style="background:url(images/a1.jpg)"></a>
+			<a href="javascript:;" style="background:url(images/a1.jpg)"></a>
+			<a href="javascript:;" style="background:url(images/a1.jpg)"></a>
+
+		</li>
+
+		<li><!--第三行-->
+			<a href="javascript:;" class="three_one" style="background:url(images/a1.jpg)"></a>
+			<a href="javascript:;" style="background:url(images/a1.jpg)"></a>
+			<a href="javascript:;" style="background:url(images/a1.jpg)"></a>
+			<a href="javascript:;" style="background:url(images/a1.jpg)"></a>
+			<a href="javascript:;" style="background:url(images/a1.jpg)"></a>
+			<a href="javascript:;" style="background:url(images/a1.jpg)"></a>
+			<a href="javascript:;" style="background:url(images/a1.jpg)"></a>	
+		</li>
+		<li><!--第四行-->
+			<a href="javascript:;" class="four_one" style="background:url(images/a1.jpg)"></a>
+			<a href="javascript:;" style="background:url(images/a1.jpg)"></a>
+			<a href="javascript:;" style="background:url(images/a1.jpg)"></a>
+			<a href="javascript:;" style="background:url(images/a1.jpg)"></a>
+			<a href="javascript:;" style="background:url(images/a1.jpg)"></a>
+		</li>
+		<li><!--第五行-->
+			<a href="javascript:;" class="five_one" style="background:url(images/a1.jpg)"></a>
+			<a href="javascript:;" style="background:url(images/a1.jpg)"></a>
+			<a href="javascript:;" style="background:url(images/a1.jpg)"></a>
+		</li>
+		<li><!--第六行-->
+			<a href="javascript:;" class="six_one" style="background:url(images/a1.jpg)"></a>
+		</li>
+	</ul>
+   
+   </div>
+   <div class="snow-container"></div>
+   
+   <!-- 切换标题效果 -->
+   <script>
+	(function() {
+    	var OriginTitile = document.title, titleTime;
+    	document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '咦，宝贝你去哪里了？';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '哇哦 ，欢迎回家 !';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },3000);
+        }
+   		 });
+		})();
+	</script>
+   
+   
+   <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+   <script type="text/javascript" src="js/sp_snow.js"></script>
+   
+   <!-- 背景音乐 -->
+   <audio id="bgmMusic" src="mp3/维也纳的冬天.mp3" preload="auto" type="audio/mp3" autoplay loop></audio>
+   <!--流量统计插件-->
+<div style="display:none">
+   <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1254885209'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s11.cnzz.com/z_stat.php%3Fid%3D1254885209' type='text/javascript'%3E%3C/script%3E"));</script>
+  <script src="http://s11.cnzz.com/z_stat.php?id=1254885209&web_id=1254885209" language="JavaScript"></script>
+</div>
+ </body>
+
+
+</html>
